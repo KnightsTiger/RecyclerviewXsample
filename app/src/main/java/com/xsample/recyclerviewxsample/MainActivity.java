@@ -26,11 +26,14 @@ public class MainActivity extends AppCompatActivity {
 
         listItems = new ArrayList<>();
 
-        for(int i=0;i<10;i++){
+        for(int i=0;i<30;i++){
             ListItem listItem = new ListItem(
-                    "heading" + i+1,
+                    "heading" + (i+1),
                     "Body text goes here"
-            )
+            );
+            listItems.add(listItem);
         }
+        adapter = new MyAdapter(listItems,this);
+        recyclerView.setAdapter(adapter);
     }
 }
