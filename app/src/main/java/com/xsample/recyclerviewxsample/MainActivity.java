@@ -23,7 +23,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String URL_DATA = "https://www.internetfaqs.net/superheros.php";
+    private static final String URL_DATA = "https://api.myjson.com/bins/xg5cg";
 
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                         progressDialog.dismiss();
                         try {
                             JSONObject jsonObject = new JSONObject(response);
-                            JSONArray jsonArray = jsonObject.getJSONArray("heroses");//Array key goes here
+                            JSONArray jsonArray = jsonObject.getJSONArray("heroes");//Array key goes here
                             for (int i=0;i<jsonArray.length();i++){
                                 JSONObject object = jsonArray.getJSONObject(i);
                                 ListItem listItem = new ListItem(
